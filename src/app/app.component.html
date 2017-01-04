@@ -1,0 +1,14 @@
+<div class="container">
+  
+  <div class="chat-box">
+      <div *ngFor="let message of messages" class="message">
+        {{message.name}}: <span [innerHTML]="message.text"></span>
+      </div>
+  </div>
+
+  <div class="chat-palette">
+      <textarea class="chat-textarea" #input (keydown.enter)="send(input.value); input.value=''"></textarea>
+      <button class="send-button" (click)="send(input.value); input.value=''">send</button>
+  </div>
+
+</div>
